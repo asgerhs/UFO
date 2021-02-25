@@ -1,0 +1,46 @@
+\documentclass[../template/template.tex]{subfiles}
+\begin{document}
+Her er en liste over ting jeg godt kan lide, i et bullet format fordi der ikke er nogen der tager prioritet.
+
+\begin{itemize}
+    \item just-eat på en søndag med tømmermænd.
+    \item kakaomælk og cola
+    \item din mor
+    \item min mor
+\end{itemize}
+
+Her er det samme med et andet bullet format.
+\begin{itemize}
+    \item[--] just-eat på en søndag med tømmermænd.
+    \item[--] kakaomælk og cola
+    \item[--] din mor
+    \item[--] min mor
+\end{itemize}
+
+\noindent Men hvad nu hvis vi gerne vil have det i rækkefølge, måske i forhold til hvad vi sætter højst i prioritet. Så laver vi bare en enumerated list.
+\begin{enumerate}
+    \item just-eat på en søndag med tømmermænd.
+    \item min mor
+    \item kakaomælk og cola
+    \item din mor
+\end{enumerate}
+
+\noindent Same same but different
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\begin{enumerate}
+    \item just-eat på en søndag med tømmermænd.
+    \item min mor
+    \item kakaomælk og cola
+    \item din mor
+\end{enumerate}
+
+\noindent Also same same but different
+\renewcommand{\theenumi}{\roman{enumi}}
+\begin{enumerate}
+    \item just-eat på en søndag med tømmermænd.
+    \item min mor
+    \item kakaomælk og cola
+    \item din mor
+\end{enumerate}
+\end{document}

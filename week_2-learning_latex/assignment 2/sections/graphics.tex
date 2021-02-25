@@ -1,0 +1,37 @@
+\documentclass[../template/template.tex]{subfiles}
+\begin{document}
+Det kan man da! Der er centering på alle billeder, på figur 
+\ref{fig::svense} på side \pageref{fig::svense} er der caption under billedet. 
+På figur \ref{fig::svense:igen} på side \pageref{fig::svense:igen}
+er captionen kommet oven over billedet. Til sidst har vi to figurer ved siden
+af hinanden, som kan ses på figur \ref{fig::svense:venstre} og \ref{fig::svense:højre}
+på side \pageref{fig::svense:venstre}.
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[scale=0.5]{Svennomark.jpg}
+    \caption{Det jo Svense!}
+    \label{fig::svense}
+\end{figure}
+\begin{figure}[hbt!]
+    \centering
+    \caption{Det jo Svense!}
+    \includegraphics[scale=0.5]{Svennomark.jpg}
+    \label{fig::svense:igen}
+\end{figure}
+
+\begin{figure}[!tbp]
+    \centering
+    \begin{minipage}[b]{0.4\textwidth}
+      \includegraphics[width=\textwidth]{Svennomark.jpg}
+      \caption{Svenno 1}
+      \label{fig::svense:venstre} 
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.4\textwidth}
+      \includegraphics[width=\textwidth]{Svennomark.jpg}
+      \caption{Svenno 2}
+      \label{fig::svense:højre}
+    \end{minipage}
+\end{figure}
+\clearpage
+\end{document}
