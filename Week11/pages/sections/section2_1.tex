@@ -1,0 +1,41 @@
+\documentclass[class=report, crop=false]{standalone}
+\usepackage[subpreambles=true]{standalone}
+
+\begin{document}
+    \section{Programmet}
+    Vi har valgt at arbejde på programmet \textbf{letterfrequencies}. Vi havde problemer med at få profileren fra intellij til at fungere korrekt og derfor har vi arbejdet ud fra det eneste hint vi fik fra intellij hvilket var at maps put funktion skulle optimeres.
+    Vi starter lige med at angive spredningen udregnet på 10000 gennemkørsler:
+    \begin{tcolorbox}
+        \[ 56859375,2 \text{ ns} \pm 10085179,175   \]
+    \end{tcolorbox}
+
+    \noindent Vores optimiseret program ser derfor således ud: 
+    \lstset{style=codestyle}
+    \lstinputlisting[language=Java, firstline=20, caption=Main.java]{Kode/Main.java}
+
+    \noindent Vi kan nu tage et kig på den nye spredning som også er udregnet på 10000 gennemkørsler:
+    \begin{tcolorbox}
+        \[ 29067911,1 \text{ ns} \pm 282264,715  \]
+    \end{tcolorbox}
+
+    \noindent Vi kan se den procentvise hastighedforøgelse:
+    \begin{tcolorbox}
+        \[ \frac{56859375,2 - 29067911,1}{56859375,2} \times 100 \approx 48,877\% \]
+    \end{tcolorbox}
+
+    \noindent Etersom vi ikke havde mulighed for flere hints fra intellij prøvede vi lige en hurtig google søgning: "how to optimze a file reader" og fandt ud af at vi kunne optimisere koden yderligere vha. en bufferedReader. 
+    BufferedReader er hurtigere fordi den "buffer" 16kb af filen som den så leder igennem imens den spørger harddisken om de næste 16kb af filen. På denne måde skal bufferedReader kun vente på svar fra harddisken 1 gang og det er ved de første 16kb. Vi har tilføjet bufferedReader således:
+    \lstset{style=codestyle}
+    \lstinputlisting[language=Java, firstline=22, lastline=28, caption=NewMain.java]{Kode/Main2.java}
+    
+    \noindent Vi får så følgende spredning igen udregnet på 10000 gennemkørsler:
+    \begin{tcolorbox}
+        \[ 19755513,7 \text{ ns} \pm 806225,216  \]
+    \end{tcolorbox}
+
+    \noindent Afslutningsvis ender vi med følgende hastighedforøgelse i procent:
+    \begin{tcolorbox}
+        \[ \frac{56859375,2 - 19755513,7}{56859375,2} \times 100 \approx 65,255\% \]
+    \end{tcolorbox}
+
+\end{document}

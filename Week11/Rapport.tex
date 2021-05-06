@@ -1,0 +1,73 @@
+\documentclass[10pt]{report}
+\usepackage[subpreambles=true]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[danish]{babel}
+\usepackage[margin=2.5cm, headheight=36pt]{geometry}
+\usepackage{graphicx}
+\graphicspath{{figures/}{Billeder/}}
+\usepackage{subcaption}
+\usepackage[pdfpagelabels]{hyperref}
+\usepackage[nottoc]{tocbibind}
+
+\usepackage[most]{tcolorbox}
+
+
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\usepackage{import}
+
+
+\title{Exploration and Presentation - Assignment 3}
+\author{
+    Martin, Frederiksen\\
+    \texttt{cph-mf237@cphbusiness.dk}\\
+    \and
+    Andreas, Vikke\\
+    \texttt{cph-av105@cphbusiness.dk}\\
+    \and
+    Asger, Sørensen\\
+    \texttt{cph-as466@cphbusiness.dk}\\
+    \and
+    William, Huusfeldt\\
+    \texttt{cph-wh106@cphbusiness.dk}\\
+  }
+
+\date{\today}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\hypersetup{pageanchor=true}
+\tableofcontents
+\import{pages/chapters/}{kapitel1}
+\import{pages/chapters/}{kapitel2}
+
+\end{document}
+
